@@ -46,8 +46,8 @@ app.use('/api/v1/course-progress',courseProgressRoutes)
 app.use('/api/v1/enrollments', enrollmentRoutes)
 app.use('/api/v1/payments', paymentRoutes);
 
-
-app.use(errorHandler)
+// Global error handler middleware
+app.use(errorHandler);
 connectDb().then(() => {
   app.listen(PORT, () => {
     console.log(`Server is listening at ${PORT}`);
